@@ -14,3 +14,8 @@ def student(request):
         form=StudentForm()
 
     return render(request,"student_model/register.html",{'form': form})
+
+def student_list(request):
+    students=Student.objects.all()
+    return render(request,"student_model/student_list.html",{'students':students})
+
