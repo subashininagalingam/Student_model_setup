@@ -12,7 +12,7 @@ class Student(models.Model):
         ('F','Female'),
         ('O','Others')
     ]
-    gender=models.CharField(max_length=10,choices=gender_choice)
+    gender=models.CharField(max_length=3,choices=gender_choice)
     address=models.TextField(max_length=1000)
 
     def __str__(self):
