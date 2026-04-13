@@ -11,7 +11,7 @@
     <body>
     <div class="container">
         <h1>Student Registration</h1>
-        <form method="post">
+        <form action="{% url 'student' %}" method="post">
             {% csrf_token %}
             {{form.as_p}}
             <button type="submit">Register</button>

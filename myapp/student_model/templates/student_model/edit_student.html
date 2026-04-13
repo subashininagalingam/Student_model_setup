@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+
+</head>
+
+<body>
+
+    <h1>Edit Student</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Name:</label>
+        <input type="text" name="name" value="{{ student.name }}" required><br><br>
+
+        <label>Mobile No:</label>
+        <input type="text" name="mobile_no" value="{{ student.mobile_no }}" required><br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" value="{{ student.email }}" required><br><br>
+
+        <label>Date of Birth:</label>
+        <input type="date" name="dob" value="{{ student.dob|date:'Y-m-d' }}" required><br><br>
+
+        <label>Address:</label>
+        <textarea name="address" required>{{ student.address }}</textarea><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+
+    
+
+</body>
+</html>

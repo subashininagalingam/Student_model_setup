@@ -1,0 +1,36 @@
+body{
+    background-color: whitesmoke;
+
+}
+
+.table-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.container2 {
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+h2{
+    position: relative;
+    top: 20px;
+    margin-top: 10px;
+}
+
+
+table{
+    width: 100%;
+}
+table, th, td {
+    text-align: left;
+    padding: 5px;
+}
+th {
+    background-color: #f7f0f0;
+}
+td {
+    border-bottom: 1px solid #ddd;
+}
