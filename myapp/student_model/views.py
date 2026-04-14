@@ -31,11 +31,11 @@ def student_list(request):
     if format == 'excel':
         wb = Workbook()
         ws = wb.active
-        ws.append(["Name", "Mobile", "Email"])
+        ws.append(["Name", "Student ID", "Mobile", "Email", "Date of Birth", "Gender", "Address"])
 
         students = Student.objects.all()
         for s in students:
-            ws.append([s.name, s.mobile_no, s.email])
+            ws.append([s.name,s.id, s.mobile_no, s.email, s.dob, s.gender, s.address])
 
         response = HttpResponse(
             content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
@@ -49,10 +49,10 @@ def student_list(request):
         response['Content-Disposition'] = 'attachment; filename="students.pdf"'
 
         students = Student.objects.all()
-        data = [["Name", "Mobile", "Email"]]
+        data = [["Name", "Student ID", "Mobile", "Email", "Date of Birth", "Gender", "Address"]]
 
         for s in students:
-            data.append([s.name, s.mobile_no, s.email])
+            data.append([s.name,s.id, s.mobile_no, s.email, s.dob, s.gender, s.address])
 
         doc = SimpleDocTemplate(response)
         table = Table(data)
