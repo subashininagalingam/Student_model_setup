@@ -3,6 +3,11 @@ from django.shortcuts import redirect, render
 from .forms import StudentForm
 from .models import *
 from django.contrib import messages
+from openpyxl import Workbook
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+from reportlab.lib import colors
+
 
 # Create your views here.
 def student(request):
@@ -19,9 +24,47 @@ def student(request):
 def success(request):
     return render(request,"student_model/success.html")
 
+
 def student_list(request):
-    students=Student.objects.all()
-    return render(request,"student_model/student_list.html",{'students':students})
+    format = request.GET.get('format')
+
+    if format == 'excel':
+        wb = Workbook()
+        ws = wb.active
+        ws.append(["Name", "Mobile", "Email"])
+
+        students = Student.objects.all()
+        for s in students:
+            ws.append([s.name, s.mobile_no, s.email])
+
+        response = HttpResponse(
+            content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        )
+        response['Content-Disposition'] = 'attachment; filename=students.xlsx'
+        wb.save(response)
+        return response
+
+    elif format == 'pdf':
+        response = HttpResponse(content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="students.pdf"'
+
+        students = Student.objects.all()
+        data = [["Name", "Mobile", "Email"]]
+
+        for s in students:
+            data.append([s.name, s.mobile_no, s.email])
+
+        doc = SimpleDocTemplate(response)
+        table = Table(data)
+        doc.build([table])
+
+        return response
+
+
+    students = Student.objects.all()
+    return render(request, 'student_model/student_list.html', {'students': students})
+
+
 
 def edit_student(request, id):
     student=Student.objects.get(id=id)

@@ -17,6 +17,14 @@
             <div class="table-container">
                 <h3>Total Students: {{ students|length }}</h3>
 
+                <form method="get" action="">
+                    <select name="format" onchange="this.form.submit()">
+                        <option value="">Download</option>
+                        <option value="excel">Download as Excel</option>
+                        <option value="pdf">Download as PDF</option>
+                    </select>
+                </form>
+
 
                 <a href="{% url 'student' %}">
                     <button>+ Add new Student</button>
@@ -58,11 +66,11 @@
     </div>
     {% if messages %}
     {% for message in messages %}
-        <script>
-            alert("{{ message }}");
-        </script>
+    <script>
+        alert("{{ message }}");
+    </script>
     {% endfor %}
-{% endif %}
+    {% endif %}
 </body>
 
 </html>
