@@ -14,6 +14,8 @@ class Student(models.Model):
     ]
     gender=models.CharField(max_length=3,choices=gender_choice)
     address=models.TextField(max_length=1000)
+    photo=models.ImageField(upload_to='photos/')
+    documents=models.FileField(upload_to='documents/')
     created_at=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

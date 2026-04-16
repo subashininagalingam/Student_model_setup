@@ -12,7 +12,7 @@ from .filters import StudentFilter
 # Create your views here.
 def student(request):
     if (request.method=='POST'):
-        form=StudentForm(request.POST)
+        form=StudentForm(request.POST,request.FILES)
         if(form.is_valid):
             form.save()
             return redirect('success')

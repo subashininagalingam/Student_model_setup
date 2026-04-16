@@ -41,6 +41,8 @@
                 <th>Date of Birth</th>
                 <th>Gender</th>
                 <th>Address</th>
+                <th>Photo</th>
+                <th>Documents</th>
                 <th>Actions</th>
             </tr>
             {% for student in students %}
@@ -52,6 +54,21 @@
                 <td>{{ student.dob }}</td>
                 <td>{{ student.gender }}</td>
                 <td>{{ student.address }}</td>
+                <td>
+                    {% if student.photo %}
+                    <img src="{{ student.photo.url }}" alt="Photo" width="100">
+                    {% else %}
+                    No Photo
+                    {% endif %}
+                </td>
+                <td>
+                    {% if student.documents %}
+                    <a href="{{ student.documents.url }}" target="_blank">View Documents</a>
+                    {% else %}
+                    No Documents
+                    {% endif %}
+                </td>
+
                 <td>
                     <a href="{% url 'edit_student' student.id %}">
                         <button class="edit-btn">Edit</button>
