@@ -1,16 +1,12 @@
+{% extends 'student_model/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block extra_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'student_model/css/success.css' %}">
-
+{% endblock %}
+{% block title %}
     <title>Success</title>
-</head>
-
-<body>
+{% endblock title %}
+{% block content %}
     <div class="container">
         <h1>Student Registered Successfully!✅</h1>
         <p>Thank you for registering {{ student.name }}.</p>
@@ -22,6 +18,4 @@
             <button>Add Student</button>
         </a>
     </div>
-</body>
-
-</html>
+{% endblock content %}

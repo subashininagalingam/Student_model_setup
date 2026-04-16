@@ -14,6 +14,7 @@ class Student(models.Model):
     ]
     gender=models.CharField(max_length=3,choices=gender_choice)
     address=models.TextField(max_length=1000)
+    created_at=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

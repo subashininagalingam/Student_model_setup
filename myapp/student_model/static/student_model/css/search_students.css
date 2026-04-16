@@ -1,0 +1,18 @@
+
+table{
+    width: 100%;
+}
+table, th, td {
+    text-align: left;
+    padding: 5px;
+}
+th {
+    background-color: #f7f0f0;
+}
+td {
+    border-bottom: 1px solid #ddd;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

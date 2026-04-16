@@ -4,9 +4,9 @@ from .forms import StudentForm
 from .models import *
 from django.contrib import messages
 from openpyxl import Workbook
-from reportlab.lib.pagesizes import letter
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
-from reportlab.lib import colors
+from reportlab.platypus import SimpleDocTemplate, Table
+from .filters import StudentFilter
+
 
 
 # Create your views here.
@@ -85,5 +85,13 @@ def delete_student(request, id):
     student.delete()
     messages.success(request, "✅Student deleted successfully")
     return redirect('student_list')
+
+def search_students(request):
+    student_filter = StudentFilter(request.GET, queryset=Student.objects.all())
+    return render(request, "student_model/search_students.html", {'filter': student_filter})
+
+def view_student(request, id):
+    student = Student.objects.get(id=id)
+    return render(request, "student_model/view_student.html", {'student': student})
 
 

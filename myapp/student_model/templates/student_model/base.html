@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Student Management System</title>
+    {% endblock title %}
+    <link rel="stylesheet" href="{% static 'student_model/css/base.css' %}">
+    {% block extra_css %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">E2E</div>
+
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="{% url 'student' %}">Student Admission</a></li>
+        <li><a href="{% url 'student_list' %}">Students List</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="{% url 'search_students' %}">Search & Filter</a></li>
+
+    </ul>
+</nav>
+    {% block content %}
+    {% endblock content %}
+
+    
+</body>
+</html>
