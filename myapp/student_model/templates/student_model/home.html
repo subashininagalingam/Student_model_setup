@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Home</title>
+{% endblock title %}
+{% block content %}
+
+    <h1>Welcome to the Student Management System</h1>
+    <p>Use the navigation menu to manage students.</p>
+    <button><a href="{% url 'student' %}">Add Student</a></button>
+
+{% endblock content %}

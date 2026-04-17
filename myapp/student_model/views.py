@@ -7,9 +7,11 @@ from openpyxl import Workbook
 from reportlab.platypus import SimpleDocTemplate, Table
 from .filters import StudentFilter
 
-
-
 # Create your views here.
+
+def home(request):
+    return render(request, 'home/index.html')
+
 def student(request):
     if (request.method=='POST'):
         form=StudentForm(request.POST,request.FILES)
