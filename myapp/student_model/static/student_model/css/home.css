@@ -1,0 +1,27 @@
+.home-container{
+    position: relative; 
+    top: 300px;
+}
+
+h1{
+    text-align: center;
+    color: #333;
+}
+p{
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+}
+button{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color:orangered;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: orangered;
+}

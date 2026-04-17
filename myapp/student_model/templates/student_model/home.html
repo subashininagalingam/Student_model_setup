@@ -1,12 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'student_model/base.html' %}
 {% load static %}
 {% block title %}
     <title>Home</title>
 {% endblock title %}
 {% block content %}
-
+<div class="home-container">
     <h1>Welcome to the Student Management System</h1>
     <p>Use the navigation menu to manage students.</p>
     <button><a href="{% url 'student' %}">Add Student</a></button>
-
+</div>
 {% endblock content %}
