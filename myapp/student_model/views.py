@@ -10,7 +10,7 @@ from .filters import StudentFilter
 # Create your views here.
 
 def home(request):
-    return render(request, 'home/index.html')
+    return render(request, 'student_model/home.html')
 
 def student(request):
     if (request.method=='POST'):
