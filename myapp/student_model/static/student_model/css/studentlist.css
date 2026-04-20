@@ -34,3 +34,57 @@ th {
 td {
     border-bottom: 1px solid #ddd;
 }
+button{
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(63, 93, 158);
+    color: white;
+}
+
+
+@media(max-width: 550px) {
+    body{
+        background-color: whitesmoke;
+        position: relative;
+        top: 50px;
+    }
+    h1{
+        font-size: 18px;
+    }
+    .table-container {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    
+    }
+    .container2{
+        width: 100%;
+        padding: 10px;
+    }
+    h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }   
+    table {
+        width: 50%;
+    }
+    tbody {
+        display: block;
+        overflow-x: auto;
+    }
+    th, td {    
+        padding: 8px;
+    }
+    img{
+        width: 50px;
+        height: 50px;
+    }
+    select,option{
+        font-size: 14px;
+    }
+
+}

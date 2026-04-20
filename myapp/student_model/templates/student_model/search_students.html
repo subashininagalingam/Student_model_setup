@@ -11,7 +11,14 @@
     <h2>Search & Filter Students</h2>
 
 <form method="GET">
-    {{ filter.form }}
+    <label>Name:</label>
+    {{ filter.form.name }}<br><br>
+    <label>Student ID:</label>
+    {{ filter.form.id }}<br><br>
+    <label>Mobile No:</label>
+    {{ filter.form.mobile_no }}<br><br>
+    <label>Email:</label>
+    {{ filter.form.email }}<br><br>
     <button type="submit">Apply Filter</button>
 </form>
 
@@ -33,9 +40,8 @@
     <td>{{ s.mobile_no }}</td>
     <td>{{ s.email }}</td>
     <td>
-        <button>
         
-        <a href="{% url 'view_student' s.id %}">View</a></button>
+       <button><a href="{% url 'view_student' s.id %}">View</a></button>
         
     </td>
 </tr>

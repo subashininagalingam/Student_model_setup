@@ -19,11 +19,12 @@
             <h3>Total Students: {{ students|length }}</h3>
 
             <form method="get" action="">
-                <select name="format" onchange="this.form.submit()">
-                    <option value="">Download</option>
+                <select name="format">
+                    <option value="">Select format</option>
                     <option value="excel">Download as Excel</option>
                     <option value="pdf">Download as PDF</option>
                 </select>
+                <button type="submit">Download</button>
             </form>
 
 
