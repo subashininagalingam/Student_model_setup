@@ -21,3 +21,20 @@ button{
     cursor: pointer;
    
 }
+@media(max-width: 550px) {
+    
+    h1{
+        font-size: 18px;
+    }
+
+    .container {
+        width: 80%;
+        padding: 5px;
+        top: 150px;
+    }
+    button {
+        width: 100%;
+        padding: 8px;
+    }
+}   
+

@@ -1,4 +1,8 @@
-
+body{
+    position: relative;
+    top: 0px;
+    
+}
 .container{
     width: 500px;
     margin: 0 auto;
@@ -38,16 +42,18 @@ button{
     }
 
     .container {
-        width: 60%;
+        width: 100%;
         padding: 10px;
+        position: relative;
+        top: 50px;
     }
     input[type="text"], input[type="email"] {
-        width: 100%;
+        width: 80%;
         padding: 8px;
     }
     
     button {
-        width: 250px;
+        width: 100px;
         padding: 8px;
         margin-left: 0;
     }
